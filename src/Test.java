@@ -1,3 +1,10 @@
+/*
+30 days of code
+
+count the biggest sum of digits in hourglass (part of an array)
+
+ */
+
 import java.util.Arrays;
 
 public class Test {
@@ -6,6 +13,7 @@ public class Test {
         int count = 0;
         int[][] arr = new int[6][6];
 
+        // this is just to simulate prerequisites from hackerrank.com
         arr[0][0] = 1;
         arr[0][1] = 1;
         arr[0][2] = 1;
@@ -49,6 +57,8 @@ public class Test {
         arr[5][5] = 0;
 
         int sum[] = new int[16];
+        //16 max hourglasses
+
         int countSum = 0;
 
         for (int z = 0; z < 4; z++) {
@@ -57,8 +67,8 @@ public class Test {
                     for (int j = w; j < 3 +w ; j++) {
 
                         if (count !=3) {
-                            if (count !=5) {
-                                sum[countSum] += arr[i][j];
+                            if (count !=5) {  //to make a narrow point of hourglass we get rid of left and right digits in the middle row
+                                sum[countSum] += arr[i][j]; //adding numbers
                             }
                         }count++;
                     }
